@@ -46,7 +46,7 @@ def main(config: Config, transmission_client: Client, db_client: DatabaseClient)
                     r.content,
                     files_wanted=feed_processor.to_downloads,
                     download_dir=rss.download_dir,
-                    paused=True,
+                    paused=False,
                 )
                 logger.info('Successfully added to transmission')
                 db_client.remember_series_name(
